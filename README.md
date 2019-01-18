@@ -1,5 +1,5 @@
 # Feed-Forward-Neural-Network
-Software required Matlab
+Software required Matlab 
  main is the maincode that will run all the sub code in it.
 BPANN is the neural network function that will perform forward and Backward propagation
 ForwardNetwork is the function for computing forward propagation
