@@ -6,6 +6,7 @@ function [realOutput, layerOutputCells] = ForwardNetwork(in, layer, weightCell, 
         X = out;
         bias = biasCell{layerIndex};
         if layerIndex == layerCount
+        % If want to use softmax activation function in the output layer uncomment the below line and then comment the next Sigmoid line
 %              out = softmax((X * weightCell{layerIndex} + bias)');
                   out = Sigmoid((X * weightCell{layerIndex} + bias)');
 
