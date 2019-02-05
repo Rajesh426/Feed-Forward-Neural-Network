@@ -1,59 +1,9 @@
 %% BPANN: Artificial Neural Network with Back Propagation
 %% Author: RAjesh Amerineni
   function [weightCell, biasCell,layerOfNeurons,err]= BPANN(trainInp,trainOut,hiddenNeurons,errorThreshhold, iterations,learningRate)
-% function BPANN()
-% %%%% input into network%%%
-% [A,C,E,H,I,T,O,U]=creating_letters;
-% output=[eye(6),eye(6),eye(6),eye(6),eye(6),eye(6),eye(6),eye(6),eye(6),eye(6)];
-% output1=[eye(6),output,output,output,output,output];
-% var=0.01;
-% mean=0;
-% % coloumn 
-% noiseoutc=gaussiannoiseout(T,H,E,A,C,I,mean,var);
-% noiseoutc1=gaussiannoiseout(T,H,E,A,C,I,mean,0.02);
-% noiseoutc2=gaussiannoiseout(T,H,E,A,C,I,mean,0.03);
-% noiseoutc3=gaussiannoiseout(T,H,E,A,C,I,mean,0.04);
-% noiseoutc4=gaussiannoiseout(T,H,E,A,C,I,mean,0.05);
-% reshape_CA=reshape(A,64,1);
-% 
-% 
-% reshape_CC=reshape(C,64,1);
-% 
-% reshape_CE=reshape(E,64,1);
-% 
-% reshape_CH=reshape(H,64,1);
-% 
-% reshape_CI=reshape(I,64,1);
-% 
-% reshape_CT=reshape(T,64,1);
-% input1=[reshape_CT,reshape_CH,reshape_CE,reshape_CA,reshape_CC,reshape_CI];
-% % inout to neural network
-% trainInp=[input1'];
-%  testInp = trainInp;
-% trainOut=eye(6);
-%  testInp = trainInp;
-%     testRealOut = trainOut;
-% hiddenNeurons=[64 36];
 
-% %%%% input assign end%%%%%%
-    %---Set training parameters
-%     iterations = 5000;
-%     errorThreshhold = 0.001;
-%     learningRate = 0.5;
-    %---Set hidden layer type, for example: [4, 3, 2]
-%     hiddenNeurons = [3 2];
     
-    %---'Xor' training data
-%     trainInp = [0 0; 0 1; 1 0; 1 1];
-%     trainOut = [0; 1; 1; 0];
-%     testInp = trainInp;
-%     testRealOut = trainOut;
-    
-    % %---'And' training data
-    % trainInp = [1 1; 1 0; 0 1; 0 0];
-    % trainOut = [1; 0; 0; 0];
-    % testInp = trainInp;
-    % testRealOut = trainOut;
+   
     assert(size(trainInp,1)==size(trainOut, 1),...
         'Counted different sets of input and output.');
     %---Initialize Network attributes
@@ -116,36 +66,10 @@
         end
     end
     
-    %--Test the trained network with a test set
-%     testsetCount = size(testInp, 1);
-%     error = zeros(testsetCount, outArgc);
-%     for t = 1:testsetCount
-%         [predict, layeroutput] = ForwardNetwork(testInp(t, :), layerOfNeurons, weightCell, biasCell);
-%         p(t,:) = predict;
-%         error(t, : ) = predict - testRealOut(t, :);
-%     end
+   
     %---Print predictions
     fprintf('Ended with %d iterations.\n', iter);
-%     a = testInp;
-%     b = testRealOut;
-%     c = p';
-%     x1_x2_act_pred_err = [a b c c-b]
-    %---Plot Surface of network predictions
-%     testInpx1 = [-1:0.1:1];
-%     testInpx2 = [-1:0.1:1];
-%     [X1, X2] = meshgrid(testInpx1, testInpx2);
-%     testOutRows = size(X1, 1);
-%     testOutCols = size(X1, 2);
-%     testOut = zeros(testOutRows, testOutCols);
-%     for row = [1:testOutRows]
-%         for col = [1:testOutCols]
-%             test = [X1(row, col), X2(row, col)];
-%             [out, l] = ForwardNetwork(test, layerOfNeurons, weightCell, biasCell);
-%             testOut(row, col) = out;
-%         end
-%     end
-%     figure(2);
-%     surf(X1, X2, testOut);
+
  end
 %% BackPropagate: Backpropagate the output through the network and adjust weights and biases
 
